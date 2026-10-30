@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+.env
+*.egg-info/
+dist/
+build/
+
+# TensorFlow/ML Models
+*.h5
+*.hdf5
+*.ckpt
+*.pb
+*.tflite
+models/
+
+# Dataset (Large files)
+dataset/
+*.zip
+*.tar.gz
+*.rar
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+
+# Backend
+backend/uploads/
+backend/app/ml/models/*.h5
+backend/app/ml/models/*.tflite
+*.log
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment
+.env
+.env.local
+.env.production

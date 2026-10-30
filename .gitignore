@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+env/
+ENV/
+.venv/
+.env
+*.egg-info/
+dist/
+build/
+
+# Machine Learning Models
+*.h5
+*.hdf5
+*.ckpt
+*.pb
+*.tflite
+*.onnx
+*.pt
+*.pth
+
+# Datasets
+dataset/
+datasets/
+*.zip
+*.tar.gz
+*.rar
+
+# Frontend
+node_modules/
+frontend/node_modules/
+frontend/dist/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Backend
+backend/uploads/
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini

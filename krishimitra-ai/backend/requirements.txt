@@ -1,0 +1,16 @@
+# ML Libraries - Updated for Python 3.12
+tensorflow==2.16.1
+numpy==1.26.3
+Pillow==10.2.0
+opencv-python==4.9.0.80
+opencv-python-headless==4.9.0.80
+scikit-learn==1.4.0
+pandas==2.2.0
+matplotlib==3.8.2
+
+# Image Processing
+scipy==1.12.0
+imageio==2.33.1
+
+# Utilities
+tqdm==4.66.1

@@ -1,0 +1,49 @@
+/* Disease detection page styles */
+.disease-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.disease-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.disease-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.upload-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.results-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  min-height: 500px;
+}
+
+.upload-area {
+  border: 3px dashed #c8e6c9;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  min-height: 250px;
+}
+
+@media (max-width: 768px) {
+  .disease-container {
+    grid-template-columns: 1fr;
+  }
+}

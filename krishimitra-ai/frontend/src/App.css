@@ -1,0 +1,313 @@
+/* frontend/src/App.css */
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 👇 IMPORTANT FIX: Ensures full height layout */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--background-light);
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+:root {
+  --primary-color: #2e7d32;
+  --primary-dark: #1b5e20;
+  --primary-light: #4caf50;
+  --secondary-color: #ff8f00;
+  --text-dark: #263238;
+  --text-light: #eceff1;
+  --background-light: #f5f9f5;  /* Slightly greener tint */
+  --background-dark: #121212;
+  --error-color: #d32f2f;
+  --success-color: #388e3c;
+  --warning-color: #ffa000;
+  --border-radius: 8px;
+  --box-shadow: 0 2px 8px rgba(46, 125, 50, 0.1); /* Greenish shadow */
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #f5f9f5 0%, #e8f5e9 100%);
+}
+
+/* Main Content Area */
+.main-content {
+  flex: 1 0 auto;  /* This pushes footer down */
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Footer will stay at bottom */
+footer {
+  flex-shrink: 0;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(76, 175, 80, 0.2);
+  border-top-color: var(--primary-dark);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Error Message */
+.error-message {
+  background-color: #ffebee;
+  color: var(--error-color);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  margin: 1rem 0;
+  border-left: 4px solid var(--error-color);
+  box-shadow: var(--box-shadow);
+}
+
+/* Success Message */
+.success-message {
+  background-color: #e8f5e9;
+  color: var(--success-color);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  margin: 1rem 0;
+  border-left: 4px solid var(--success-color);
+  box-shadow: var(--box-shadow);
+}
+
+/* Cards */
+.card {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(46, 125, 50, 0.1);
+  height: 100%; /* Make cards fill height in grid */
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(46, 125, 50, 0.15);
+}
+
+/* Buttons */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: white;
+  box-shadow: 0 4px 10px rgba(46, 125, 50, 0.3);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--primary-dark), #0d3d13);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(46, 125, 50, 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, var(--secondary-color), #e65100);
+  color: white;
+  box-shadow: 0 4px 10px rgba(255, 143, 0, 0.3);
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #e65100, #bf360c);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn-outline:hover {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: white;
+  border-color: transparent;
+}
+
+/* Forms */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+}
+
+.form-input.error {
+  border-color: var(--error-color);
+}
+
+.form-input.error:focus {
+  box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.1);
+}
+
+/* Grid System */
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin: 1.5rem 0;
+}
+
+/* Section Headers */
+.section-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.section-header h1 {
+  color: var(--primary-dark);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.section-header p {
+  color: #666;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .section-header h1 {
+    font-size: 2rem;
+  }
+}
+
+/* 404 Page */
+.not-found {
+  text-align: center;
+  padding: 4rem 2rem;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.not-found h2 {
+  font-size: 3rem;
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.not-found p {
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+.not-found a {
+  color: white;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.75rem 2rem;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(46, 125, 50, 0.3);
+}
+
+.not-found a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(46, 125, 50, 0.4);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e8f5e9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-light);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}

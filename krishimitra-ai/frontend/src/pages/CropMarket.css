@@ -1,0 +1,140 @@
+/* Crop market page styles */
+/* Add to CropMarket.css */
+
+.market-search {
+  display: flex;
+  gap: 10px;
+  flex: 2;
+  min-width: 300px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #2e7d32;
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+}
+
+.search-btn {
+  padding: 0.75rem 1.5rem;
+  white-space: nowrap;
+  background: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+  background: #1b5e20;
+  transform: translateY(-2px);
+}
+
+.clear-btn {
+  padding: 0.75rem 1rem;
+  white-space: nowrap;
+}
+
+.results-count {
+  margin: 1rem 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.results-count strong {
+  color: #2e7d32;
+}
+
+/* Dark theme support */
+body.dark-theme .results-count {
+  color: #b0bec5;
+}
+
+body.dark-theme .results-count strong {
+  color: #81c784;
+}
+
+@media (max-width: 768px) {
+  .market-search {
+    flex-wrap: wrap;
+  }
+  
+  .search-btn, .clear-btn {
+    width: 100%;
+  }
+}
+.market-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.market-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.market-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.summary-card {
+  background: linear-gradient(135deg, #2e7d32, #1b5e20);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.market-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.market-table-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  margin-bottom: 2rem;
+}
+
+.market-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.market-table th {
+  background: #2e7d32;
+  color: white;
+  padding: 1rem;
+  text-align: left;
+}
+
+.market-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+@media (max-width: 768px) {
+  .market-controls {
+    flex-direction: column;
+  }
+}
